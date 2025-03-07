@@ -1,0 +1,6 @@
+env: "local"
+nearest_period: 1h
+http_server:
+  address: "localhost:8080"
+  timeout: 10s
+  idle_timeout: 60s

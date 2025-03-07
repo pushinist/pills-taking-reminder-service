@@ -1,16 +1,14 @@
 package main
 
 import (
-	"github.com/go-chi/chi/v5"
-	"net/http"
+	"log"
+
+	"github.com/pushinist/pills-taking-reminder-service/internal/config"
 )
 
 func main() {
-	r := chi.NewRouter()
-
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello World"))
-	})
-
-	http.ListenAndServe(":8080", r)
+	cfg, err := config.Load()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
